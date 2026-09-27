@@ -1,0 +1,31 @@
+openapi: 3.0.3
+
+info:
+  title: CampusHub API
+  version: 1.0.0
+  description: |
+    REST API documentation for CampusHub.
+
+servers:
+  - url: http://localhost:5000/api
+    description: Development Server
+
+tags:
+  - name: Authentication
+    description: Authentication APIs
+
+paths:
+  /auth/register:
+    $ref: "./paths/auth.yaml#/register"
+
+  /auth/login:
+    $ref: "./paths/auth.yaml#/login"
+
+  # /events:
+  #   $ref: "./paths/event.yaml#/getEvents"
+
+  # /notes:
+  #   $ref: "./paths/note.yaml#/uploadNotes"
+
+  # /complaints:
+  #   $ref: "./paths/complaint.yaml#/createComplaint"

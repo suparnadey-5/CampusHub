@@ -1,0 +1,87 @@
+register:
+  post:
+    tags:
+      - Authentication
+    summary: Register a new user
+    description: Register a new CampusHub account.
+
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - name
+              - email
+              - password
+              - branch
+              - year
+              - section
+              - phone
+              - age
+              - rollNumber
+
+            properties:
+              name:
+                type: string
+
+              email:
+                type: string
+                format: email
+
+              password:
+                type: string
+
+              branch:
+                type: string
+
+              year:
+                type: integer
+
+              section:
+                type: string
+
+              age:
+                type: integer
+
+              phone:
+                type: string
+
+              rollNumber:
+                type: string
+
+    responses:
+      "201":
+        description: User registered successfully
+
+login:
+  post:
+    tags:
+      - Authentication
+    summary: Login user
+    description: Authenticate an existing user.
+
+    requestBody:
+      required: true
+
+      content:
+        application/json:
+          schema:
+            type: object
+
+            required:
+              - email
+              - password
+
+            properties:
+              email:
+                type: string
+                format: email
+
+              password:
+                type: string
+
+    responses:
+      "200":
+        description: Login successful
